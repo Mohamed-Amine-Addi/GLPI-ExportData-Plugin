@@ -43,6 +43,7 @@ function plugin_init_exportdata() {
     $PLUGIN_HOOKS['menu_toadd']['exportdata'] = [
     'tools'    => 'PluginExportdataMenu',
     'helpdesk' => 'PluginExportdataStatsMenu',
+    'management' => 'PluginExportdataReportMenu',
     ];
 
     $PLUGIN_HOOKS['post_item_form']['exportdata'] = 'plugin_exportdata_post_item_form';
