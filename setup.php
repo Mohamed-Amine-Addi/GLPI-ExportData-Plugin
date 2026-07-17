@@ -44,6 +44,7 @@ function plugin_init_exportdata() {
     'tools'    => 'PluginExportdataMenu',
     'helpdesk' => 'PluginExportdataStatsMenu',
     'management' => 'PluginExportdataReportMenu',
+    'plugins'    => 'PluginExportdataChatMenu',
     ];
 
     $PLUGIN_HOOKS['post_item_form']['exportdata'] = 'plugin_exportdata_post_item_form';
