@@ -48,7 +48,10 @@ function plugin_init_exportdata() {
     ];
 
     $PLUGIN_HOOKS['post_item_form']['exportdata'] = 'plugin_exportdata_post_item_form';
-
+    $PLUGIN_HOOKS['add_css']['exportdata'] = 'css/exportdata.css';
+    $PLUGIN_HOOKS['item_add']['exportdata']       = ['Ticket' => 'plugin_exportdata_ticket_post_add'];
+    $PLUGIN_HOOKS['add_javascript']['exportdata'] = 'js/custom_ticket_form.js';
+    $PLUGIN_HOOKS['getAddSearchOptionsNew']['exportdata'] = 'plugin_exportdata_getAddSearchOptionsNew';
 }
 
 function plugin_exportdata_central(){
@@ -90,8 +93,6 @@ function plugin_exportdata_post_item_form($params) {
                 results.innerHTML = '';
                 return;
             }
-            // On attend 400ms après la dernière frappe avant de chercher
-            // (évite d'envoyer une requête à chaque lettre tapée)
             timer = setTimeout(function() {
                 fetch('/glpi/glpi/plugins/exportdata/ajax/suggest.php?q=' + encodeURIComponent(q))
                     .then(r => r.json())
@@ -120,6 +121,21 @@ function plugin_exportdata_post_item_form($params) {
         });
     })();
     </script>
-    <?php
+   <?php
+    // --- Ajouts : Impact + Département ---
+    echo "<div id='exportdata-extra-fields' style='display:none;'>";
+    echo "  <div class='row mb-3'>";
+    echo "    <label class='col-lg-3 col-form-label'>Impact</label>";
+    echo "    <div class='col-lg-9'>";
+    $item->dropdownImpact(['name' => 'impact', 'value' => 3, 'width' => '100%']);
+    echo "    </div>";
+    echo "  </div>";
+    echo "  <div class='row mb-3'>";
+    echo "    <label class='col-lg-3 col-form-label'>Département</label>";
+    echo "    <div class='col-lg-9'>";
+    echo "      <input type='text' name='department' class='form-control' placeholder='Ex: Service Informatique'>";
+    echo "    </div>";
+    echo "  </div>";
+    echo "</div>";
 }
 ?>

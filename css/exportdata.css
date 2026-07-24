@@ -1,0 +1,145 @@
+/* ==========================================================
+   Plugin ExportData - Feuille de style commune
+   ========================================================== */
+
+:root {
+    --ed-primary: #f8b83e;
+    --ed-primary-dark: #e0a020;
+    --ed-border: #e0e0e0;
+    --ed-bg-soft: #fafafa;
+    --ed-text-muted: #888;
+    --ed-radius: 8px;
+}
+
+/* ---------- En-tête de page (icône + titre) ---------- */
+.ed-page {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.ed-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ed-header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.ed-header h1 i {
+    color: var(--ed-primary);
+}
+
+.ed-header p {
+    color: var(--ed-text-muted);
+    font-size: 13px;
+}
+
+/* ---------- Cartes / encarts ---------- */
+.ed-card {
+    border: 1px solid var(--ed-border);
+    border-radius: var(--ed-radius);
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.ed-card-soft {
+    background: var(--ed-bg-soft);
+}
+
+/* ---------- Boutons ---------- */
+.ed-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ed-btn-primary {
+    background: var(--ed-primary);
+    color: #1a1200;
+}
+
+.ed-btn-primary:hover {
+    background: var(--ed-primary-dark);
+}
+
+.ed-btn-success {
+    background: #4caf50;
+    color: #fff;
+}
+
+.ed-btn-cancel {
+    background: #ccc;
+    color: #333;
+}
+
+/* ---------- Colonnes (report builder) ---------- */
+.ed-columns {
+    display: flex;
+    gap: 20px;
+}
+
+.ed-columns > div {
+    flex: 1;
+}
+
+/* ---------- Chat / Assistant IA ---------- */
+.ed-chatbox {
+    border: 1px solid var(--ed-border);
+    border-radius: var(--ed-radius);
+    height: 420px;
+    overflow-y: auto;
+    padding: 15px;
+    background: var(--ed-bg-soft);
+    margin-bottom: 12px;
+}
+
+.ed-bubble {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    white-space: pre-wrap;
+}
+
+.ed-bubble-user {
+    background: var(--ed-primary);
+    margin-left: auto;
+}
+
+.ed-bubble-ai {
+    background: #fff;
+    border: 1px solid var(--ed-border);
+}
+
+.ed-sources {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--ed-text-muted);
+    border-top: 1px solid #eee;
+    padding-top: 6px;
+}
+
+/* ---------- Tableaux d'aperçu ---------- */
+.ed-preview-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ed-preview-table th,
+.ed-preview-table td {
+    border: 1px solid var(--ed-border);
+    padding: 6px 8px;
+    font-size: 12.5px;
+}
+
+.ed-preview-table th {
+    background: #f2f2f2;
+}
